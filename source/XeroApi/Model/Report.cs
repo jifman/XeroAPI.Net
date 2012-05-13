@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace XeroApi.Model
 {
@@ -7,6 +8,7 @@ namespace XeroApi.Model
 
     public class Report : ModelBase
     {
+        [Key]
         [ItemId]
         public string ReportID { get; set; }
 

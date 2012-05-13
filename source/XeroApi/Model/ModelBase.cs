@@ -32,12 +32,12 @@ namespace XeroApi.Model
         ERROR
     }
 
-    public struct Warning
+    public class Warning
     {
         public string Message;
     }
 
-    public struct ValidationError
+    public class ValidationError
     {
         public string Message;
     }

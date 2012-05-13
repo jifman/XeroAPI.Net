@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace XeroApi.Model
 {
     public class Receipt : ModelBase, IAttachmentParent
     {
+        [Key]
         [ItemId]
         public Guid ReceiptID { get; set; }
 

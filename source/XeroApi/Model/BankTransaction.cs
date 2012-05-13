@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace XeroApi.Model
 {
     public class BankTransaction : ModelBase
     {
+        [Key]
         [ItemId]
         public Guid? BankTransactionID { get; set; }
 

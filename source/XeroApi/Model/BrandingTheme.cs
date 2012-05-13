@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace XeroApi.Model
 {
     public class BrandingTheme : ModelBase
     {
+        [Key]
         [ItemId]
         public Guid BrandingThemeID { get; set; }
 

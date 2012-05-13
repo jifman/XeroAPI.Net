@@ -1,5 +1,6 @@
 using System;
 using System.Xml.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace XeroApi.Model
 {
@@ -8,6 +9,7 @@ namespace XeroApi.Model
         [ItemUpdatedDate]
         public DateTime? UpdatedDateUTC { get; set; }
 
+        [Key]
         [ItemId]
         public Guid ManualJournalID { get; set; }
 

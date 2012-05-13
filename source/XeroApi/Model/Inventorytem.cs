@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace XeroApi.Model
 {
     public class Item : ModelBase
     {
+        [Key]
         [ItemId]
         public Guid ItemID { get; set; }
 

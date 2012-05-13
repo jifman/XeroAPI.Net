@@ -2,6 +2,7 @@
 using System.IO;
 using System.Xml.Serialization;
 using DevDefined.OAuth.Utility;
+using System.ComponentModel.DataAnnotations;
 
 namespace XeroApi.Model
 {
@@ -22,7 +23,7 @@ namespace XeroApi.Model
             ContentStream = fileInfo.OpenRead();
         }
 
-
+        [Key]
         [ItemId]
         public Guid? AttachmentID { get; set; }
 

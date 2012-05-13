@@ -200,7 +200,7 @@ namespace DevDefined.OAuth.Framework
       {
           return
               new Exception(string.Format("Supplied value of If-Modified-Since header is too small: {0}",
-                                          ifModifiedSince.ToString()));
+                                          ifModifiedSince.ToString("u")));
       }
   }
 }

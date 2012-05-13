@@ -47,16 +47,16 @@ namespace XeroApi.Tests.OAuth.Consumer {
             catch(Exception ex)
             {
                 Assert.That(ex, Is.TypeOf(typeof(Exception)));
-                Assert.That(ex.Message, Is.EqualTo(string.Format("Supplied value of If-Modified-Since header is too small: {0}", ifModifiedSince.ToString())));
+                Assert.That(ex.Message, Is.EqualTo(string.Format("Supplied value of If-Modified-Since header is too small: {0}", ifModifiedSince.ToString("u"))));
             }
 
             _consumerRequest.Context.Headers.Clear();
             _headers.Add("If-Modified-Since", "01-Jan-1753");
             _consumerRequest.Validate();                    
         }
-        
+
         [Test]
-        [ExpectedException(typeof(Exception), ExpectedMessage = "Supplied value of If-Modified-Since header is too small: 1/01/0001 12:00:00 AM")]
+        [ExpectedException(typeof(Exception), ExpectedMessage = "Supplied value of If-Modified-Since header is too small: 0001-01-01 00:00:00Z")]
         public void to_consumer_response_should_call_validation()
         {
             var ifModifiedSince = DateTime.MinValue;
